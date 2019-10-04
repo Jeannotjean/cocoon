@@ -1,71 +1,62 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-    <!-- tab layout -->
-    <link rel="icon" href="images/cocoon_tab.png">
-		<title>Cocoon - Dashboard</title>
-		<script>
-		window.onload = function () {
-
-		var chart = new CanvasJS.Chart("chartContainer", {
-			animationEnabled: true,
-			title:{
-				text: "Last night activity"
-			},
-			axisY: {
-				title: " ",
-				valueFormatString: " ",
-				suffix: " ",
-				prefix: " "
-			},
-			data: [{
-				type: "splineArea",
-				color: "rgb(64, 53, 111)",
-				markerSize: 5,
-				xValueFormatString: "HH",
-				yValueFormatString: " ",
-				dataPoints: [
-					{ x: new Date(2019, 10, 1, 20, 0, 0), y: 3289000 },
-					{ x: new Date(2019, 10, 1, 21, 0, 0), y: 3830000 },
-					{ x: new Date(2019, 10, 1, 22, 0, 0), y: 2009000 },
-					{ x: new Date(2019, 10, 1, 23, 0, 0), y: 2040000 },
-					{ x: new Date(2019, 10, 2, 0, 0, 0), y: 1496000 },
-					{ x: new Date(2019, 10, 2, 1, 0, 0), y: 1513000 },
-					{ x: new Date(2019, 10, 2, 2, 0, 0), y: 2621000 },
-					{ x: new Date(2019, 10, 2, 3, 0, 0), y: 1400000 },
-					{ x: new Date(2019, 10, 2, 4, 0, 0), y: 1397000 },
-					{ x: new Date(2019, 10, 2, 5, 0, 0), y: 2506000 }
-				]
-			}]
-			});
-		chart.render();
-
-		}
-		</script>
-	</head>
-
-	<body>
-    <!-- navigation bar -->
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
     <div class="navigation">
-      <a href="dashboard.html">
-        <img src="images/cocoon_logo.jpg" width="100" />
-      </a>
+      <a href="index.html"></a>
+    <link rel="icon" href="images/cocoon_tab.png">
+    <link rel="stylesheet" type="text/css" href="styles/dashboard.css">
+    <img src="images/cocoon_logo.jpg" width="100" class="cocoon_logo" />
+  </div>
+    <div class="navigation">
       <ul>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="settings.html">Settings</a></li>
-        <li><a href="aboutus.html">About us</a></li>
+        <li><a class="title1" href="temperature.html">Temperature</a></li>
+        <li><a class="title2" href="luminosity.html">Luminosity</a></li>
+        <li><a class="title3" href="humidity.html">Humidity</a></li>
+        <li><a class="title4" href="Lovebed.html">Love Bed</a></li>
       </ul>
     </div>
 
-    <!-- sleep quality graph -->
-		<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="justgage/raphael-2.1.4.min.js"></script>
+    <script src="justgage/justgage.js"></script>
+  </head>
 
-    <!-- alarm -->
-    <p>This is the first paragraph. <br /> There you have a line break.</p>
-    <hr />
-    <p>Lorem ipsum dolor sit amet, <a href="https://www.google.com/" target="_blank">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut <strong>labore</strong> et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud <em>exercitation</em> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <body>
+    <div id="gauge" class="gauge" style="width:400px; height:320px"></div>
+    <!--<input type="number" name="input_temp" id="input_temp" onchange="update()">-->
 
-	</body>
+    <script>
+    var g = new JustGage({
+    id: "gauge",
+    value: getRandomInt(0, 100),
+    min: 0,
+    max: 100,
+    title: "Sleep Quality"
+    });
+    </script>
+
+    <script>
+      function update(){
+      var temp=document.getElementById('input_temp').value
+      console.log(temp)
+    }
+    </script>
+    <div class="">
+      <p><strong>Temperature</strong><br>7°</p>
+      <p><strong>Temperature</strong><br>7°</p>
+      <p><strong>Temperature</strong><br>7°</p>
+      <p><strong>Temperature</strong><br>7°</p>
+      <p><strong>Temperature</strong><br>7°</p>
+      <p><strong>Temperature</strong><br>7°</p>
+      <p><strong>Temperature</strong><br>7°</p>
+      <p><strong>Temperature</strong><br>7°</p>
+      <p><strong>Temperature</strong><br>7°</p>
+      <p><strong>Temperature</strong><br>7°</p>
+      <p><strong>Temperature</strong><br>7°</p>
+      <p><strong>Temperature</strong><br>7°</p>
+      <p><strong>Temperature</strong><br>7°</p>
+    </div>
+  </body>
 <html>
