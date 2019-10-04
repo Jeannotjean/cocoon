@@ -1,0 +1,43 @@
+body{
+  background-color: #f0f0f5;
+  border: 0px;
+  margin : 0px;
+  overflow-y: scroll;
+}
+
+.navigation{
+  background-color: #40356F;
+}
+
+.cocoon_logo{
+  padding-left: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #40356F;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #555599;
+}
+
+.gauge{
+  margin: 0 auto;
+  padding-top: 100px;
+}
